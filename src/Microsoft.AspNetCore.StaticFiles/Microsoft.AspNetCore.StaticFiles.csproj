@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">12.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">..\..\..\Tools</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(VSToolsPath)\DNX\Microsoft.DNX.Props" Condition="'$(VSToolsPath)' != ''" />
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{DF2B9E65-6059-4287-995C-90E9B7365AD9}</ProjectGuid>
+    <BaseIntermediateOutputPath Condition="'$(BaseIntermediateOutputPath)'=='' ">.\obj</BaseIntermediateOutputPath>
+    <OutputPath Condition="'$(OutputPath)'=='' ">.\bin\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SchemaVersion>2.0</SchemaVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Constants.cs" />
+    <Compile Include="DefaultFilesExtensions.cs" />
+    <Compile Include="DefaultFilesMiddleware.cs" />
+    <Compile Include="DefaultFilesOptions.cs" />
+    <Compile Include="DirectoryBrowserExtensions.cs" />
+    <Compile Include="DirectoryBrowserMiddleware.cs" />
+    <Compile Include="DirectoryBrowserOptions.cs" />
+    <Compile Include="DirectoryBrowserServiceExtensions.cs" />
+    <Compile Include="FileExtensionContentTypeProvider.cs" />
+    <Compile Include="FileServerExtensions.cs" />
+    <Compile Include="FileServerOptions.cs" />
+    <Compile Include="Helpers.cs" />
+    <Compile Include="HtmlDirectoryFormatter.cs" />
+    <Compile Include="IContentTypeProvider.cs" />
+    <Compile Include="IDirectoryFormatter.cs" />
+    <Compile Include="Infrastructure\RangeHelpers.cs" />
+    <Compile Include="Infrastructure\SharedOptions.cs" />
+    <Compile Include="Infrastructure\SharedOptionsBase.cs" />
+    <Compile Include="LoggerExtensions.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources.Designer.cs" />
+    <Compile Include="StaticFileContext.cs" />
+    <Compile Include="StaticFileExtensions.cs" />
+    <Compile Include="StaticFileMiddleware.cs" />
+    <Compile Include="StaticFileOptions.cs" />
+    <Compile Include="StaticFileResponseContext.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CustomDictionary.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="project.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\HttpAbstractions\src\Microsoft.AspNetCore.Http.Abstractions\Microsoft.AspNetCore.Http.Abstractions.csproj">
+      <Project>{5a99fe69-17bf-4b45-8732-7b4876eb44ed}</Project>
+      <Name>Microsoft.AspNetCore.Http.Abstractions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\HttpAbstractions\src\Microsoft.AspNetCore.Http.Features\Microsoft.AspNetCore.Http.Features.csproj">
+      <Project>{d6cfe97f-f4a4-4006-8139-f746e1d287f0}</Project>
+      <Name>Microsoft.AspNetCore.Http.Features</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\HttpAbstractions\src\Microsoft.AspNetCore.Http\Microsoft.AspNetCore.Http.csproj">
+      <Project>{81d9a017-1499-4810-bff7-127f05a9923b}</Project>
+      <Name>Microsoft.AspNetCore.Http</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\HttpAbstractions\src\Microsoft.AspNetCore.WebUtilities\Microsoft.AspNetCore.WebUtilities.csproj">
+      <Project>{b647a5fe-0cc0-4c42-9839-9a7afe679af4}</Project>
+      <Name>Microsoft.AspNetCore.WebUtilities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VSToolsPath)\DNX\Microsoft.DNX.targets" Condition="'$(VSToolsPath)' != ''" />
+</Project>
